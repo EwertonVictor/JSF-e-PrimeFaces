@@ -1,24 +1,37 @@
 # Maven
 target/
-!.mvn/wrapper/maven-wrapper.jar
-
-# Logs
-*.log
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/wrapper/maven-wrapper.jar
 
 # Eclipse
 .classpath
 .project
 .settings/
 
-# IDE genérica
-*.iml
+# IntelliJ IDEA
 .idea/
+*.iml
+*.iws
 
-# Sistema operacional
+# VS Code
+.vscode/
+
+# OS-specific
 .DS_Store
 Thumbs.db
 
-# Arquivos temporários
+# Logs and temporary files
+*.log
+logs/
 *.tmp
-*.bak
-*.swp
+
+# Compiled files
+*.class
+*.jar
+*.war

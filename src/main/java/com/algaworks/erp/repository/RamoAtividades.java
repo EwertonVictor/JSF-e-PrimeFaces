@@ -26,7 +26,7 @@ public class RamoAtividades implements Serializable {
 	}
 	
 	//CriteriaBuilder
-	public List<RamoAtividade> pesquisar(String[] descricao){
+	public List<RamoAtividade> pesquisar(String descricao){
 		CriteriaBuilder criteriaBuilder  = manager.getCriteriaBuilder();
 		
 		CriteriaQuery<RamoAtividade> criteriaQuery = criteriaBuilder.createQuery(RamoAtividade.class);

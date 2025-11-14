@@ -31,20 +31,28 @@ public class Empresas implements Serializable {
 	
 	//pesquisa por empresas | jpql
 	public List<Empresa> pesquisar(String nome) {
-		TypedQuery<Empresa> query = manager.createQuery("from Empresa where nomeFantasia like :nomeFantasia", Empresa.class);
+	
+	//consulta com jpql
+	//String jpql = "from Empresa where nomeFantasia like :nomeFantasia";
+		
+		//consulta criteria
+		TypedQuery<Empresa> query = manager
+				.createQuery("from Empresa where nomeFantasia like :nomeFantasia", Empresa.class);
+		
 		query.setParameter("nomeFantasia", nome + "%");
 		
 		return query.getResultList();
-	}
-	
-	//Deleta uma empresa por id
-	public void remover(Empresa empresa) {
-		empresa = porId(empresa.getId());
-		manager.remove(empresa);
 	}
 	
 	//salva a empresa na tabela empresa
 	public Empresa guardar(Empresa empresa) {
 		return manager.merge(empresa);
 	}
+
+	//Deleta uma empresa por id
+	public void remover(Empresa empresa) {
+		empresa = porId(empresa.getId());
+		manager.remove(empresa);
+	}
+	
 }

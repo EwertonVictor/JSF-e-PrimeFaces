@@ -1,12 +1,12 @@
 package com.algaworks.erp.repository;
 
-import com.algaworks.erp.model.Empresa;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.List;
 
-
+import com.algaworks.erp.model.Empresa;
 
 public class SchemaGeneration {
 	
@@ -15,8 +15,7 @@ public class SchemaGeneration {
 		
 		EntityManager em = emf.createEntityManager();
 		
-		List<Empresa> lista = em.createQuery("from Empresa", Empresa.class)
-				.getResultList();
+		List<Empresa> lista = em.createQuery("from Empresa", Empresa.class).getResultList();
 		
 		System.out.println(lista);
 		

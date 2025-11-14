@@ -1,5 +1,8 @@
+//equivale ao arquivo DAO - camada de persistência responsavel por salvar, buscar e atualizar no banco de dados
+
 package com.algaworks.erp.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -25,5 +28,26 @@ public class CamadaPersistencia {
 		//Buscando as informações no banco
 		List<RamoAtividade> listaDeRamoAtividades = ramoAtividades.pesquisar("");
 		List<Empresa> listaDeEmpresas = empresas.pesquisar("");
+		System.out.println(listaDeEmpresas);
+		
+		//Criando uma empresa
+		Empresa empresa = new Empresa();
+		empresa.setNomeFantasia("João da Silva");
+		empresa.setCnpj("41.952.519/001-57");
+		empresa.setRazaoSocial("João da Silva 41952519000157");
+		empresa.setDataFundacao(new Date());
+		empresa.setRamoAtividade(listaDeRamoAtividades.get(0));
+		
+		//Salvando a empresa
+		empresas.guardar(empresa);
+		
+		em.getTransaction().commit();
+		
+		//Verificando se a inserção funcionou
+		List<Empresa> listaDeEmpresas2 = empresas.pesquisar("");
+		System.out.println(listaDeEmpresas2);
+		
+		em.close();
+		emf.close();
 	}
 }
