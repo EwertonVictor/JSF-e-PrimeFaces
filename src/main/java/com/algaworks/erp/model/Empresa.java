@@ -37,7 +37,7 @@ public class Empresa implements Serializable {
 	private String cnpj;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "data")
+	@Column(name = "data_fundacao")
 	private Date dataFundacao;
 	
 	@ManyToOne
@@ -77,6 +77,14 @@ public class Empresa implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public TipoEmpresa getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoEmpresa tipo) {
+		this.tipo = tipo;
 	}
 
 	public String getNomeFantasia() {
