@@ -36,6 +36,7 @@
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet</artifactId>
             <version>2.4.0.Final</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- JSF -->
@@ -43,6 +44,7 @@
             <groupId>org.glassfish</groupId>
             <artifactId>javax.faces</artifactId>
             <version>2.2.14</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- PrimeFaces -->
@@ -50,6 +52,7 @@
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>6.0</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Servlet API -->
@@ -79,6 +82,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
