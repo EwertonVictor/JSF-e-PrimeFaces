@@ -10,6 +10,12 @@
 		<welcome-file>GestaoEmpresas.xhtml</welcome-file>
 	</welcome-file-list>
 	
+	<!-- Habilitar icones do primefaces-->
+	<context-param>
+		<param-name>primefaces.FONT_AWESOME</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
 	<!-- Mudar de "Development" para "Production" quando em produção-->
 	<context-param>
 		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
